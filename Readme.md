@@ -1,5 +1,7 @@
 ## TextbookDownloader
 
+![Screenshot](https://raw.github.com/codeThatThinks/TextbookDownloader/master/screenshot.png)
+
 Downloads online textbooks that use flash.
 
 Don't steal stuff.
