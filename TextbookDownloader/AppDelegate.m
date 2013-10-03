@@ -41,7 +41,16 @@
 
 - (IBAction)browseForDownloadLocation:(id)sender
 {
+    NSOpenPanel *downloadLocationDialog = [NSOpenPanel openPanel];
+    [downloadLocationDialog setCanChooseFiles:NO];
+    [downloadLocationDialog setCanChooseDirectories:YES];
+    [downloadLocationDialog setResolvesAliases:NO];
+    [downloadLocationDialog setAllowsMultipleSelection:NO];
     
+    if([downloadLocationDialog runModal] == NSFileHandlingPanelOKButton)
+    {
+        [downloadTo setStringValue:[[downloadLocationDialog URL] path]];
+    }
 }
 
 - (IBAction)leadingZerosChecked:(id)sender
@@ -100,9 +109,13 @@
         for (int page = [minPage intValue]; page <= [maxPage intValue]; page++)
         {
             // create filename
-            downloadFilename = [NSString stringWithFormat:@"ap0%d%@", page, @".swf"];
+            downloadFilename = [NSString stringWithFormat:@"%@%@%d%@",
+                                ([prefixCheckbox state] == NSOnState) ? [prefixTextfield stringValue] : @"",
+                                ([leadingZerosCheckbox state] == NSOnState) ? [NSString stringWithRepeatedString:@"0" Times:[leadingZerosTextfield intValue]] : @"",
+                                page,
+                                @".swf"];
             NSLog(@"%@%@", @"Downloading ", downloadFilename);
-            
+
             // create download URL
             downloadURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", [textbookURL stringValue], downloadFilename]];
             

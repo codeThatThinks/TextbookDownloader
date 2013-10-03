@@ -17,6 +17,7 @@
 			<string>NSCustomObject</string>
 			<string>NSMenu</string>
 			<string>NSMenuItem</string>
+			<string>NSNumberFormatter</string>
 			<string>NSProgressIndicator</string>
 			<string>NSScrollView</string>
 			<string>NSScroller</string>
@@ -25,6 +26,7 @@
 			<string>NSTextField</string>
 			<string>NSTextFieldCell</string>
 			<string>NSTextView</string>
+			<string>NSUserDefaultsController</string>
 			<string>NSView</string>
 			<string>NSWindowTemplate</string>
 		</array>
@@ -770,7 +772,7 @@
 												<int key="NSCellFlags2">272630784</int>
 												<string key="NSContents"/>
 												<reference key="NSSupport" ref="230643411"/>
-												<string key="NSPlaceholderString">http://mcgraw.com/textbook/data/</string>
+												<string key="NSPlaceholderString">http://cengage.com/textbook/data/</string>
 												<string key="NSCellIdentifier">_NS:9</string>
 												<reference key="NSControlView" ref="771358691"/>
 												<bool key="NSDrawsBackground">YES</bool>
@@ -852,7 +854,7 @@
 												<reference key="NSSupport" ref="230643411"/>
 												<string key="NSCellIdentifier">_NS:9</string>
 												<reference key="NSControlView" ref="988701809"/>
-												<int key="NSButtonFlags">-2037104640</int>
+												<int key="NSButtonFlags">-2036973568</int>
 												<int key="NSButtonFlags2">129</int>
 												<string key="NSAlternateContents"/>
 												<string key="NSKeyEquivalent"/>
@@ -1059,8 +1061,46 @@
 											<object class="NSTextFieldCell" key="NSCell" id="908631541">
 												<int key="NSCellFlags">-1536163775</int>
 												<int key="NSCellFlags2">71304192</int>
-												<string key="NSContents">0</string>
+												<integer value="1" key="NSContents"/>
 												<reference key="NSSupport" ref="230643411"/>
+												<object class="NSNumberFormatter" key="NSFormatter" id="869068832">
+													<dictionary class="NSMutableDictionary" key="NS.attributes">
+														<boolean value="YES" key="allowsFloats"/>
+														<integer value="1040" key="formatterBehavior"/>
+														<boolean value="NO" key="lenient"/>
+														<integer value="250" key="maximum"/>
+														<integer value="1" key="minimum"/>
+														<string key="negativeInfinitySymbol">-∞</string>
+														<string key="nilSymbol"/>
+														<integer value="0" key="numberStyle"/>
+														<string key="positiveInfinitySymbol">+∞</string>
+													</dictionary>
+													<string key="NS.positiveformat">#</string>
+													<string key="NS.negativeformat">#</string>
+													<nil key="NS.positiveattrs"/>
+													<nil key="NS.negativeattrs"/>
+													<nil key="NS.zero"/>
+													<object class="NSAttributedString" key="NS.nil">
+														<string key="NSString"/>
+													</object>
+													<object class="NSAttributedString" key="NS.nan">
+														<string key="NSString">NaN</string>
+														<dictionary key="NSAttributes"/>
+													</object>
+													<integer value="1" key="NS.min"/>
+													<integer value="250" key="NS.max"/>
+													<object class="NSDecimalNumberHandler" key="NS.rounding">
+														<int key="NS.roundingmode">3</int>
+														<bool key="NS.raise.overflow">YES</bool>
+														<bool key="NS.raise.underflow">YES</bool>
+														<bool key="NS.raise.dividebyzero">YES</bool>
+													</object>
+													<string key="NS.decimal">.</string>
+													<string key="NS.thousand">,</string>
+													<bool key="NS.hasthousands">NO</bool>
+													<bool key="NS.localized">YES</bool>
+													<bool key="NS.allowsfloats">YES</bool>
+												</object>
 												<string key="NSCellIdentifier">_NS:9</string>
 												<reference key="NSControlView" ref="341889967"/>
 												<bool key="NSDrawsBackground">YES</bool>
@@ -1083,7 +1123,9 @@
 												<int key="NSCellFlags2">0</int>
 												<string key="NSCellIdentifier">_NS:1099</string>
 												<reference key="NSControlView" ref="858997284"/>
-												<double key="NSMaxValue">100</double>
+												<double key="NSValue">1</double>
+												<double key="NSMinValue">1</double>
+												<double key="NSMaxValue">250</double>
 												<double key="NSIncrement">1</double>
 												<bool key="NSAutorepeat">YES</bool>
 											</object>
@@ -1426,6 +1468,9 @@
 					<reference key="NSTextColor" ref="472023146"/>
 				</object>
 				<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+			</object>
+			<object class="NSUserDefaultsController" id="102005161">
+				<bool key="NSSharedInstance">YES</bool>
 			</object>
 		</array>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
@@ -1925,6 +1970,38 @@
 						<reference key="destination" ref="848065709"/>
 					</object>
 					<int key="connectionID">1200</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: leadingZerosStepper.intValue</string>
+						<reference key="source" ref="341889967"/>
+						<reference key="destination" ref="976324537"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="341889967"/>
+							<reference key="NSDestination" ref="976324537"/>
+							<string key="NSLabel">value: leadingZerosStepper.intValue</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">leadingZerosStepper.intValue</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1215</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: leadingZerosTextfield.intValue</string>
+						<reference key="source" ref="858997284"/>
+						<reference key="destination" ref="976324537"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="858997284"/>
+							<reference key="NSDestination" ref="976324537"/>
+							<string key="NSLabel">value: leadingZerosTextfield.intValue</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">leadingZerosTextfield.intValue</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1211</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -2719,6 +2796,9 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">1187</int>
 						<reference key="object" ref="908631541"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="869068832"/>
+						</array>
 						<reference key="parent" ref="341889967"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -2747,6 +2827,16 @@
 						<reference key="object" ref="612238577"/>
 						<reference key="parent" ref="848065709"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1204</int>
+						<reference key="object" ref="869068832"/>
+						<reference key="parent" ref="908631541"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1205</int>
+						<reference key="object" ref="102005161"/>
+						<reference key="parent" ref="0"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -2769,6 +2859,11 @@
 				<string key="1189.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1190.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1191.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<integer value="1041" key="1204.IBNumberFormatterBehaviorMetadataKey"/>
+				<boolean value="YES" key="1204.IBNumberFormatterLocalizesFormatMetadataKey"/>
+				<real value="12.1" key="1204.IBNumberFormatterSampleNumberKey"/>
+				<string key="1204.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="1205.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="130.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="131.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="134.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -2878,7 +2973,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1200</int>
+			<int key="maxID">1217</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

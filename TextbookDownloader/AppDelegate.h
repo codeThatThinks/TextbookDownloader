@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "NSString+Repeat.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
