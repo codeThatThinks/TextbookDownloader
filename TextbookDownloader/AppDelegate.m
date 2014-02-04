@@ -18,6 +18,9 @@
 @synthesize minPage;
 @synthesize maxPage;
 
+@synthesize swfRadio;
+@synthesize pdfRadio;
+
 @synthesize leadingZerosCheckbox;
 @synthesize leadingZerosTextfield;
 @synthesize leadingZerosStepper;
@@ -113,7 +116,8 @@
                                 ([prefixCheckbox state] == NSOnState) ? [prefixTextfield stringValue] : @"",
                                 ([leadingZerosCheckbox state] == NSOnState) ? [NSString stringWithRepeatedString:@"0" Times:[leadingZerosTextfield intValue]] : @"",
                                 page,
-                                @".swf"];
+                                ([swfRadio state] == NSOnState) ? @".swf" : @".pdf"];
+
             NSLog(@"%@%@", @"Downloading ", downloadFilename);
 
             // create download URL

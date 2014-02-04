@@ -20,6 +20,9 @@
 @property (assign) IBOutlet NSTextField *minPage;
 @property (assign) IBOutlet NSTextField *maxPage;
 
+@property (assign) IBOutlet NSButtonCell *swfRadio;
+@property (assign) IBOutlet NSButtonCell *pdfRadio;
+
 @property (assign) IBOutlet NSButton *leadingZerosCheckbox;
 - (IBAction)leadingZerosChecked:(id)sender;
 @property (assign) IBOutlet NSTextField *leadingZerosTextfield;
